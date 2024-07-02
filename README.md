@@ -19,13 +19,13 @@ npm install
 
 
 Setting up the Database
-Start your MySQL server.
-Create a database called file_upload:
-sql
+    Start your MySQL server.
+    Create a database called file_upload:
+    sql
 
 CREATE DATABASE file_upload;
-Create a table called files:
-sql
+  Create a table called files:
+  sql
 
 CREATE TABLE files (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -36,37 +36,39 @@ CREATE TABLE files (
   size INT NOT NULL,
   uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-Running the Application
-Start the server:
-bash
+      Running the Application
+          Start the server:
+
 
 npm start
 The server will be running on http://127.0.0.1:3000.
+
 API Endpoints
 Upload a Single File
-URL: /upload
-Method: POST
-Form Data: File (file input)
+    URL: /upload
+    Method: POST
+    Form Data: File (file input)
 Response:
-201 Created: File uploaded successfully.
-500 Internal Server Error: Error uploading file.
+    201 Created: File uploaded successfully.
+    500 Internal Server Error: Error uploading file.
 Upload Multiple Files
-URL: /uploads
-Method: POST
+    URL: /uploads
+    Method: POST
 Form Data: Files (file input, multiple)
 Response:
-201 Created: Files uploaded successfully.
-400 Bad Request: No files were uploaded.
-500 Internal Server Error: Error uploading files.
+      201 Created: Files uploaded successfully.
+      400 Bad Request: No files were uploaded.
+      500 Internal Server Error: Error uploading files.
 Download a File
-URL: /download/:filename
-Method: GET
+    URL: /download/:filename
+    Method: GET
 Response:
-200 OK: File downloaded successfully.
-404 Not Found: File not found.
-500 Internal Server Error: Error downloading file.
+    200 OK: File downloaded successfully.
+    404 Not Found: File not found.
+    500 Internal Server Error: Error downloading file.
+
 Project Structure
-bash
+
 
 multer-mysql-upload/
 │
@@ -75,8 +77,9 @@ multer-mysql-upload/
 ├── app.js               # Main application file
 ├── package.json         # Project dependencies and scripts
 ├── README.md            # Project documentation
-Dependencies
-express: ^4.19.2
-multer: ^1.4.5-lts.1
-mysql2: ^3.10.2
-nodemon: ^3.1.4
+
+#Dependencies
+  express: ^4.19.2
+  multer: ^1.4.5-lts.1
+  mysql2: ^3.10.2
+  nodemon: ^3.1.4
